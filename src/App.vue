@@ -26,6 +26,8 @@ export default {
   components: {},
   methods: {
     createParticipants(allObj) {
+      // eslint-disable-next-line
+      // console.log(everyoneObj)
       const allParticipantsArray = []
       for (const family in allObj) {
         allObj[family].forEach(personObj => {
@@ -34,17 +36,42 @@ export default {
           }
         })
       }
-      this.participants = allParticipantsArray
+      this.allParticipantIds = allParticipantsArray
       // eslint-disable-next-line
-      console.log(this.participants)
+      // console.log(this.allParticipantIds)
+    },
+    assignSanta(santa) {
+      if (santa.participating) {
+        const randomId = Math.floor(
+          Math.random() * this.allParticipantIds.length
+        )
+        if (
+          !santa.directFamIdsArray.includes(randomId) ||
+          !santa.previousSelectionIds.includes(randomId)
+        ) {
+          santa.selection = randomId
+        }
+      }
+    },
+    distributeAllSantas() {
+      this.allParticipantIds.forEach(santa => {
+        this.assignSanta(santa)
+      })
+    },
+    showParticipants() {
+      // eslint-disable-next-line
+      console.log(this.allParticipantIds)
     }
   },
   created: function() {
     this.createParticipants(everyoneObj)
+    this.distributeAllSantas()
+    this.showParticipants()
   },
   data() {
     return {
-      participants: null
+      allParticipantIds: null,
+      allSantas: []
     }
   }
 }
