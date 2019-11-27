@@ -1,28 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-for="(family, index) in people" v-bind:key="index">
+      <button v-on:click="shuffle">BUTTON</button>
+      <div v-for="(invididual, i) in family" v-bind:key="i">
+        <span>{{ individual.id }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// <div
+//   class="santa"
+//   v-for="(individual, index) in family"
+//   v-bind:key="index"
+// >
+//   <span> {{ individual.first }} {{ individual.last }} </span>
+//   <span> --> </span>
+//   <span class="selection">{{ individual.selection }}</span>
+// </div>
 
+import everyoneObj from './people.js'
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  components: {},
+  methods: {
+    createParticipants(obj) {
+      const pool = Object.keys(obj)
+      // eslint-disable-next-line
+      console.log(pool)
+    }
+  },
+  created: function() {
+    // eslint-disable-next-line
+    console.log(everyone, 'ahhh')
+    this.createParticipants(everyoneObj)
+  },
+  data() {
+    return {
+      people: null
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.santa {
+  color: red;
+}
+.selection {
+  color: blue;
+  background: yellow;
 }
 </style>
