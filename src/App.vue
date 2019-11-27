@@ -25,20 +25,26 @@ export default {
   name: 'app',
   components: {},
   methods: {
-    createParticipants(obj) {
-      const pool = Object.keys(obj)
+    createParticipants(allObj) {
+      const allParticipantsArray = []
+      for (const family in allObj) {
+        allObj[family].forEach(personObj => {
+          if (personObj.participating) {
+            allParticipantsArray.push(personObj.id)
+          }
+        })
+      }
+      this.participants = allParticipantsArray
       // eslint-disable-next-line
-      console.log(pool)
+      console.log(this.participants)
     }
   },
   created: function() {
-    // eslint-disable-next-line
-    console.log(everyone, 'ahhh')
     this.createParticipants(everyoneObj)
   },
   data() {
     return {
-      people: null
+      participants: null
     }
   }
 }
