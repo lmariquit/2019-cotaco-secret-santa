@@ -32,6 +32,7 @@ export default {
       for (const family in allObj) {
         allObj[family].forEach(personObj => {
           if (personObj.participating) {
+            this.allSantas.push(personObj)
             allParticipantsArray.push(personObj.id)
           }
         })
@@ -45,22 +46,44 @@ export default {
         const randomId = Math.floor(
           Math.random() * this.allParticipantIds.length
         )
+        console.log(
+          'rand num is',
+          randomId,
+          '. Assigning ',
+          santa.first,
+          santa.last,
+          ' to id ',
+          this.allParticipantIds[randomId]
+        )
         if (
-          !santa.directFamIdsArray.includes(randomId) ||
-          !santa.previousSelectionIds.includes(randomId)
+          santa.directFamIdsArray.includes(this.allParticipantIds[randomId])
         ) {
-          santa.selection = randomId
+          console.log('AHHHH THIS IS NO GOOD!!')
+          this.resetCounter--
+          this.tempIdArr.push(this.allParticipantIds[randomId])
+          this.allParticipantIds.splice(randomId, 1)
+          if (this.resetCounter < 0) {
+            console.log('NOOOOOOOO')
+            throw new Error('Something went badly wrong!')
+          }
         }
+        santa.selection = this.allParticipantIds[randomId]
+        this.resetCounter = 10
+        this.allParticipantIds = [...this.allParticipantIds, ...this.tempIdArr]
+        this.tempIdArr = []
+        this.allParticipantIds.splice(randomId, 1)
       }
     },
     distributeAllSantas() {
-      this.allParticipantIds.forEach(santa => {
+      this.allSantas.forEach(santa => {
         this.assignSanta(santa)
       })
     },
     showParticipants() {
       // eslint-disable-next-line
-      console.log(this.allParticipantIds)
+      console.log('santas', this.allSantas)
+      // eslint-disable-next-line
+      console.log('participants', this.allParticipantIds)
     }
   },
   created: function() {
@@ -71,7 +94,9 @@ export default {
   data() {
     return {
       allParticipantIds: null,
-      allSantas: []
+      allSantas: [],
+      resetCounter: 10,
+      tempIdArr: []
     }
   }
 }
