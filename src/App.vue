@@ -1,45 +1,32 @@
 <template>
   <div id="app">
-    <div v-for="(family, index) in people" v-bind:key="index">
-      <button v-on:click="shuffle">BUTTON</button>
-      <div v-for="(invididual, i) in family" v-bind:key="i">
-        <span>{{ individual.id }}</span>
-      </div>
-    </div>
+    <div
+      v-for="(individual, index) in this.allSantasArr"
+      v-bind:key="index"
+    >{{individual.first}} {{individual.last}} --> {{allSantasObj[individual.selection]}}</div>
   </div>
 </template>
 
 <script>
-// <div
-//   class="santa"
-//   v-for="(individual, index) in family"
-//   v-bind:key="index"
-// >
-//   <span> {{ individual.first }} {{ individual.last }} </span>
-//   <span> --> </span>
-//   <span class="selection">{{ individual.selection }}</span>
-// </div>
-
 import everyoneObj from './people.js'
 export default {
   name: 'app',
   components: {},
   methods: {
     createParticipants(allObj) {
-      // eslint-disable-next-line
-      // console.log(everyoneObj)
       const allParticipantsArray = []
       for (const family in allObj) {
         allObj[family].forEach(personObj => {
           if (personObj.participating) {
-            this.allSantas.push(personObj)
+            this.allSantasObj[
+              personObj.id
+            ] = `${personObj.first} ${personObj.last}`
+            this.allSantasArr.push(personObj)
             allParticipantsArray.push(personObj.id)
           }
         })
       }
       this.allParticipantIds = allParticipantsArray
-      // eslint-disable-next-line
-      // console.log(this.allParticipantIds)
     },
     assignSanta(santa, ids, tempIdArr = []) {
       if (santa.participating) {
@@ -59,7 +46,7 @@ export default {
           tempIdArr.push(ids[randomId])
           ids.splice(randomId, 1)
           this.assignSanta(santa, ids, tempIdArr)
-          if (this.resetCounter < 0) {
+          if (this.resetCounter < 0 || ids.length === 0) {
             console.log('NOOOOOOOO')
             throw new Error('Something went badly wrong!')
           }
@@ -74,27 +61,35 @@ export default {
       // eslint-disable-next-line
       console.log('THE SANTAS', this.allParticipantIds)
     },
-    distributeAllSantas() {
-      this.allSantas.forEach(santa => {
+    distributeallSantasArr() {
+      this.allSantasArr.forEach(santa => {
         this.assignSanta(santa, this.allParticipantIds)
       })
     },
     showParticipants() {
       // eslint-disable-next-line
-      console.log('santas', this.allSantas)
+      console.log('santas', this.allSantasArr)
       // eslint-disable-next-line
       console.log('participants', this.allParticipantIds)
+    },
+    test(selectionId) {
+      // eslint-disable-next-line
+      console.log('AHHH', selectionId)
+      // eslint-disable-next-line
+      console.log('IDIDID', this.allSantasArr[selectionId].id)
+      return this.allSantasArr[selectionId]
     }
   },
   created: function() {
     this.createParticipants(everyoneObj)
-    this.distributeAllSantas()
+    this.distributeallSantasArr()
     this.showParticipants()
   },
   data() {
     return {
       allParticipantIds: null,
-      allSantas: [],
+      allSantasArr: [],
+      allSantasObj: {},
       resetCounter: 10
     }
   }
