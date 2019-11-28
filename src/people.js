@@ -6,7 +6,7 @@ const everyoneObj = {
       directFamIdsArray: [0],
       first: 'remy',
       last: 'cotaco',
-      previousSelectionIds: [],
+      previousSelectionIds: [8, 18],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -18,7 +18,7 @@ const everyoneObj = {
       directFamIdsArray: [1, 2, 3, 4, 5],
       first: 'nestor',
       last: 'enriquez',
-      previousSelectionIds: [],
+      previousSelectionIds: [39, 32],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -28,7 +28,7 @@ const everyoneObj = {
       directFamIdsArray: [1, 2, 3, 4, 5],
       first: 'nheeda',
       last: 'roache',
-      previousSelectionIds: [],
+      previousSelectionIds: [13, 41],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -38,7 +38,7 @@ const everyoneObj = {
       directFamIdsArray: [1, 2, 3, 4, 5],
       first: 'brian',
       last: 'roache',
-      previousSelectionIds: [],
+      previousSelectionIds: [42, 25],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -48,7 +48,7 @@ const everyoneObj = {
       directFamIdsArray: [1, 2, 3, 4, 5],
       first: 'lissa',
       last: 'tsang',
-      previousSelectionIds: [],
+      previousSelectionIds: [33, 34],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -58,7 +58,7 @@ const everyoneObj = {
       directFamIdsArray: [1, 2, 3, 4, 5],
       first: 'barry',
       last: 'tsang',
-      previousSelectionIds: [],
+      previousSelectionIds: [10, 42],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -70,7 +70,7 @@ const everyoneObj = {
       directFamIdsArray: [6, 7, 8, 9],
       first: 'cynthia',
       last: 'cornelio',
-      previousSelectionIds: [],
+      previousSelectionIds: [36, 14],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -80,7 +80,7 @@ const everyoneObj = {
       directFamIdsArray: [6, 7, 8, 9],
       first: 'jess',
       last: 'cornelio',
-      previousSelectionIds: [],
+      previousSelectionIds: [31, 19],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -90,7 +90,7 @@ const everyoneObj = {
       directFamIdsArray: [6, 7, 8, 9],
       first: 'jason',
       last: 'cornelio',
-      previousSelectionIds: [],
+      previousSelectionIds: [23, 21],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -112,7 +112,7 @@ const everyoneObj = {
       directFamIdsArray: [10, 11, 12, 13, 14, 15, 16, 17],
       first: 'evelyn',
       last: 'cano',
-      previousSelectionIds: [],
+      previousSelectionIds: [28, 5],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -122,7 +122,7 @@ const everyoneObj = {
       directFamIdsArray: [10, 11, 12, 13, 14, 15, 16, 17],
       first: 'ariel',
       last: 'cano',
-      previousSelectionIds: [],
+      previousSelectionIds: [6, 36],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -132,7 +132,7 @@ const everyoneObj = {
       directFamIdsArray: [10, 11, 12, 13, 14, 15, 16, 17],
       first: 'eric',
       last: 'cano',
-      previousSelectionIds: [],
+      previousSelectionIds: [43, 8],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -142,7 +142,7 @@ const everyoneObj = {
       directFamIdsArray: [10, 11, 12, 13, 14, 15, 16, 17],
       first: 'sonia',
       last: 'cano',
-      previousSelectionIds: [],
+      previousSelectionIds: [45, 35],
       participating: false,
       selection: 'NO SELECTION'
     },
@@ -152,7 +152,7 @@ const everyoneObj = {
       directFamIdsArray: [10, 11, 12, 13, 14, 15, 16, 17],
       first: 'arnel',
       last: 'cano',
-      previousSelectionIds: [],
+      previousSelectionIds: [4, 40],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -182,7 +182,7 @@ const everyoneObj = {
       directFamIdsArray: [10, 11, 12, 13, 14, 15, 16, 17],
       first: 'arielle',
       last: 'cano',
-      previousSelectionIds: [],
+      previousSelectionIds: [3],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -194,7 +194,7 @@ const everyoneObj = {
       directFamIdsArray: [18, 19, 20, 21, 22, 23],
       first: 'vher',
       last: 'teodoro',
-      previousSelectionIds: [],
+      previousSelectionIds: [5, 13],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -204,7 +204,7 @@ const everyoneObj = {
       directFamIdsArray: [18, 19, 20, 21, 22, 23],
       first: 'hermes',
       last: 'teodoro',
-      previousSelectionIds: [],
+      previousSelectionIds: [25, 1],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -214,7 +214,7 @@ const everyoneObj = {
       directFamIdsArray: [18, 19, 20, 21, 22, 23],
       first: 'rannie',
       last: 'teodoro',
-      previousSelectionIds: [],
+      previousSelectionIds: [34, 45],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -224,7 +224,7 @@ const everyoneObj = {
       directFamIdsArray: [18, 19, 20, 21, 22, 23],
       first: 'christine',
       last: 'han',
-      previousSelectionIds: [],
+      previousSelectionIds: [3],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -234,7 +234,7 @@ const everyoneObj = {
       directFamIdsArray: [18, 19, 20, 21, 22, 23],
       first: 'roman',
       last: 'han',
-      previousSelectionIds: [],
+      previousSelectionIds: [46],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -244,7 +244,7 @@ const everyoneObj = {
       directFamIdsArray: [18, 19, 20, 21, 22, 23],
       first: 'stephanie',
       last: 'teodoro',
-      previousSelectionIds: [],
+      previousSelectionIds: [29, 9],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -256,7 +256,7 @@ const everyoneObj = {
       directFamIdsArray: [24, 25, 26, 27, 28, 29, 30],
       first: 'jeanette',
       last: 'baisa',
-      previousSelectionIds: [],
+      previousSelectionIds: [41, 12],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -266,7 +266,7 @@ const everyoneObj = {
       directFamIdsArray: [24, 25, 26, 27, 28, 29, 30],
       first: 'jim',
       last: 'baisa',
-      previousSelectionIds: [],
+      previousSelectionIds: [46, 43],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -296,7 +296,7 @@ const everyoneObj = {
       directFamIdsArray: [24, 25, 26, 27, 28, 29, 30],
       first: 'joshua',
       last: 'baisa',
-      previousSelectionIds: [],
+      previousSelectionIds: [11],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -326,9 +326,9 @@ const everyoneObj = {
       id: 31,
       family: 'medenilla',
       directFamIdsArray: [31, 32, 33, 34, 35],
-      first: 'mynra',
+      first: 'myrna',
       last: 'albana',
-      previousSelectionIds: [],
+      previousSelectionIds: [0, 2],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -338,7 +338,7 @@ const everyoneObj = {
       directFamIdsArray: [31, 32, 33, 34, 35],
       first: 'soc',
       last: 'albana',
-      previousSelectionIds: [],
+      previousSelectionIds: [48, 4],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -348,7 +348,7 @@ const everyoneObj = {
       directFamIdsArray: [31, 32, 33, 34, 35],
       first: 'joseph',
       last: 'cotaco',
-      previousSelectionIds: [],
+      previousSelectionIds: [46, 37],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -358,7 +358,7 @@ const everyoneObj = {
       directFamIdsArray: [31, 32, 33, 34, 35],
       first: 'justin',
       last: 'medenilla',
-      previousSelectionIds: [],
+      previousSelectionIds: [20, 23],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -368,7 +368,7 @@ const everyoneObj = {
       directFamIdsArray: [31, 32, 33, 34, 35],
       first: 'jasmin',
       last: 'medenilla',
-      previousSelectionIds: [],
+      previousSelectionIds: [1, 17],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -380,7 +380,7 @@ const everyoneObj = {
       directFamIdsArray: [36, 37, 38, 39, 40],
       first: 'imelda',
       last: 'mariquit',
-      previousSelectionIds: [],
+      previousSelectionIds: [12, 20],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -390,7 +390,7 @@ const everyoneObj = {
       family: 'mariquit',
       directFamIdsArray: [36, 37, 38, 39, 40],
       last: 'lopez',
-      previousSelectionIds: [],
+      previousSelectionIds: [2, 0],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -410,7 +410,7 @@ const everyoneObj = {
       directFamIdsArray: [36, 37, 38, 39, 40],
       first: 'loren',
       last: 'mariquit',
-      previousSelectionIds: [],
+      previousSelectionIds: [35, 48],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -420,7 +420,7 @@ const everyoneObj = {
       directFamIdsArray: [36, 37, 38, 39, 40],
       first: 'kathleen',
       last: 'mariquit',
-      previousSelectionIds: [],
+      previousSelectionIds: [44, 49],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -432,7 +432,7 @@ const everyoneObj = {
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
       first: 'daisy',
       last: 'policarpio',
-      previousSelectionIds: [],
+      previousSelectionIds: [10],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -442,7 +442,7 @@ const everyoneObj = {
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
       first: 'robert',
       last: 'policarpio',
-      previousSelectionIds: [],
+      previousSelectionIds: [19, 11],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -452,7 +452,7 @@ const everyoneObj = {
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
       first: 'brian',
       last: 'policarpio',
-      previousSelectionIds: [],
+      previousSelectionIds: [32, 7],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -462,7 +462,7 @@ const everyoneObj = {
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
       first: 'jen',
       last: 'policarpio',
-      previousSelectionIds: [],
+      previousSelectionIds: [14, 39],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -472,7 +472,7 @@ const everyoneObj = {
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
       first: 'christopher',
       last: 'policarpio',
-      previousSelectionIds: [],
+      previousSelectionIds: [7, 31],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -482,7 +482,7 @@ const everyoneObj = {
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
       first: 'david',
       last: 'policarpio',
-      previousSelectionIds: [],
+      previousSelectionIds: [40, 22],
       participating: true,
       selection: 'NO SELECTION'
     },
@@ -504,7 +504,7 @@ const everyoneObj = {
       directFamIdsArray: [48],
       first: 'sherry',
       last: 'cotaco',
-      previousSelectionIds: [],
+      previousSelectionIds: [37, 44],
       participating: true,
       selection: 'NO SELECTION'
     }
@@ -516,7 +516,7 @@ const everyoneObj = {
       directFamIdsArray: [49],
       first: 'mimi',
       last: 'oliva',
-      previousSelectionIds: [],
+      previousSelectionIds: [24],
       participating: true,
       selection: 'NO SELECTION'
     }

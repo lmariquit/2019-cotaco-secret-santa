@@ -31,17 +31,20 @@ export default {
     assignSanta(santa, ids, tempIdArr = []) {
       if (santa.participating) {
         const randomId = Math.floor(Math.random() * ids.length)
-        console.log(
-          'rand num is',
-          randomId,
-          '. Assigning ',
-          santa.first,
-          santa.last,
-          ' to id ',
-          ids[randomId]
-        )
-        if (santa.directFamIdsArray.includes(ids[randomId])) {
-          console.log('AHHHH THIS IS NO GOOD!!')
+        // console.log(
+        //   'rand num is',
+        //   randomId,
+        //   '. Assigning ',
+        //   santa.first,
+        //   santa.last,
+        //   ' to id ',
+        //   ids[randomId]
+        // )
+        if (
+          santa.directFamIdsArray.includes(ids[randomId]) ||
+          santa.previousSelectionIds.includes(ids[randomId])
+        ) {
+          // console.log('AHHHH THIS IS NO GOOD!!')
           this.resetCounter--
           tempIdArr.push(ids[randomId])
           ids.splice(randomId, 1)
@@ -59,7 +62,7 @@ export default {
         }
       }
       // eslint-disable-next-line
-      console.log('THE SANTAS', this.allParticipantIds)
+      // console.log('THE SANTAS', this.allParticipantIds)
     },
     distributeallSantasArr() {
       this.allSantasArr.forEach(santa => {
@@ -74,9 +77,9 @@ export default {
     },
     test(selectionId) {
       // eslint-disable-next-line
-      console.log('AHHH', selectionId)
+      // console.log('AHHH', selectionId)
       // eslint-disable-next-line
-      console.log('IDIDID', this.allSantasArr[selectionId].id)
+      // console.log('IDIDID', this.allSantasArr[selectionId].id)
       return this.allSantasArr[selectionId]
     }
   },
