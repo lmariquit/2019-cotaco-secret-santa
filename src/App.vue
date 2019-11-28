@@ -6,6 +6,14 @@
         <span class="selection">{{allSantasObj[individual.selection]}}</span>
       </div>
     </div>
+    <br />
+    <div class="results">
+      <div class="pairs--lm" v-for="(individual, index) in this.allSantasArr" v-bind:key="index">
+        <span class="santa--lm">{{individual.first}} {{individual.last}}</span>
+        <span>----></span>
+        <span class="selection--lm">{{allSantasObj[individual.selection]}}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -135,6 +143,37 @@ export default {
 .santa:hover + .selection {
   /* visibility: visible; */
   opacity: 1;
+  transition: opacity 0.25s ease-in;
+}
+
+/* LM VIEW */
+
+.results {
+  margin-top: 750px;
+  font-weight: bold;
+}
+
+.pairs--lm {
+  font-size: 15px;
+  justify-content: center;
+  margin: 10px;
+  text-transform: uppercase;
+  align-items: baseline;
+}
+
+.pairs--lm span {
+  padding: 5px;
+}
+
+.santa--lm {
+  color: green;
+  border-color: red;
+  cursor: pointer;
+}
+
+.selection--lm {
+  color: red;
+  border-color: green;
   transition: opacity 0.25s ease-in;
 }
 </style>
