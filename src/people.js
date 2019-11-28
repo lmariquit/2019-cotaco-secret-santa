@@ -490,7 +490,7 @@ const everyoneObj = {
       id: 47,
       family: 'policarpio',
       directFamIdsArray: [41, 42, 43, 44, 45, 46, 47],
-      first: 'ariel',
+      first: 'ariel kramer',
       last: 'policarpio',
       previousSelectionIds: [],
       participating: true,

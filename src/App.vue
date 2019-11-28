@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <div
-      v-for="(individual, index) in this.allSantasArr"
-      v-bind:key="index"
-    >{{individual.first}} {{individual.last}} --> {{allSantasObj[individual.selection]}}</div>
+    <div class="pairs__container">
+      <div class="pairs" v-for="(individual, index) in this.allSantasArr" v-bind:key="index">
+        <span class="santa">{{individual.first}} {{individual.last}}</span>
+        <span class="selection">{{allSantasObj[individual.selection]}}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -44,7 +46,7 @@ export default {
           santa.directFamIdsArray.includes(ids[randomId]) ||
           santa.previousSelectionIds.includes(ids[randomId])
         ) {
-          // console.log('AHHHH THIS IS NO GOOD!!')
+          console.log('AHHHH THIS IS NO GOOD!!', santa.first, ids[randomId])
           this.resetCounter--
           tempIdArr.push(ids[randomId])
           ids.splice(randomId, 1)
@@ -100,11 +102,39 @@ export default {
 </script>
 
 <style>
-.santa {
-  color: red;
+.pairs {
+  font-size: 25px;
+  justify-content: center;
+  margin: 75px;
+  text-transform: uppercase;
+  align-items: baseline;
 }
+
+.pairs span {
+  margin: 0 15px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+}
+
+.santa {
+  color: green;
+  border-color: red;
+  cursor: pointer;
+}
+
 .selection {
-  color: blue;
-  background: yellow;
+  color: red;
+  border-color: green;
+  /* visibility: hidden; */
+  opacity: 0;
+  font-size: 50px;
+  transition: opacity 0.25s ease-in;
+}
+
+.santa:hover + .selection {
+  /* visibility: visible; */
+  opacity: 1;
+  transition: opacity 0.25s ease-in;
 }
 </style>
