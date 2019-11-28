@@ -41,11 +41,9 @@ export default {
       // eslint-disable-next-line
       // console.log(this.allParticipantIds)
     },
-    assignSanta(santa) {
+    assignSanta(santa, ids, tempIdArr = []) {
       if (santa.participating) {
-        const randomId = Math.floor(
-          Math.random() * this.allParticipantIds.length
-        )
+        const randomId = Math.floor(Math.random() * ids.length)
         console.log(
           'rand num is',
           randomId,
@@ -53,30 +51,32 @@ export default {
           santa.first,
           santa.last,
           ' to id ',
-          this.allParticipantIds[randomId]
+          ids[randomId]
         )
-        if (
-          santa.directFamIdsArray.includes(this.allParticipantIds[randomId])
-        ) {
+        if (santa.directFamIdsArray.includes(ids[randomId])) {
           console.log('AHHHH THIS IS NO GOOD!!')
           this.resetCounter--
-          this.tempIdArr.push(this.allParticipantIds[randomId])
-          this.allParticipantIds.splice(randomId, 1)
+          tempIdArr.push(ids[randomId])
+          ids.splice(randomId, 1)
+          this.assignSanta(santa, ids, tempIdArr)
           if (this.resetCounter < 0) {
             console.log('NOOOOOOOO')
             throw new Error('Something went badly wrong!')
           }
+        } else {
+          santa.selection = ids[randomId]
+          this.resetCounter = 10
+          ids = [...ids, ...tempIdArr]
+          ids.splice(randomId, 1)
+          this.allParticipantIds = ids
         }
-        santa.selection = this.allParticipantIds[randomId]
-        this.resetCounter = 10
-        this.allParticipantIds = [...this.allParticipantIds, ...this.tempIdArr]
-        this.tempIdArr = []
-        this.allParticipantIds.splice(randomId, 1)
       }
+      // eslint-disable-next-line
+      console.log('THE SANTAS', this.allParticipantIds)
     },
     distributeAllSantas() {
       this.allSantas.forEach(santa => {
-        this.assignSanta(santa)
+        this.assignSanta(santa, this.allParticipantIds)
       })
     },
     showParticipants() {
@@ -95,8 +95,7 @@ export default {
     return {
       allParticipantIds: null,
       allSantas: [],
-      resetCounter: 10,
-      tempIdArr: []
+      resetCounter: 10
     }
   }
 }
